@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--  namespace 중복안되게 작성   -->
+<mapper namespace="user">
+	 <!-- 전체 레코드 조회  -->
+	<select id="listUser" resultType="com.example.coffine.model.user.dto.UserDTO">
+	SELECT 
+		user_num, user_email, user_pw, user_pwCheck, user_name,
+		user_phone, user_gender, user_joinDate
+	FROM 
+		USER 
+			ORDER BY user_num desc		
+	</select>
+	<!-- 회원 추가 -->
+	<insert id="insertUser">
+	INSERT INTO
+	 USER
+	 	(user_email, user_pw, user_pwCheck, user_name,
+			user_phone, user_gender) 
+	VALUES
+		(#{user_email}, #{user_pw}, #{user_pwCheck}, #{user_name},
+			#{user_phone}, #{user_gender})
+	</insert>
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

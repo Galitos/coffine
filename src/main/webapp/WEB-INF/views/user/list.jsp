@@ -13,9 +13,8 @@
 <table border="1" width="700px">
 	<tr>
 		<td>번호</td>
-		<td>이메일</td>
+		<td>아이디</td>
 		<td>비밀번호</td>
-		<td>비밀번호확인</td>
 		<td>이름</td>
 		<td>휴대폰 번호</td>
 		<td>성별</td>
@@ -24,9 +23,8 @@
 <c:forEach var="row" items="${list}">
 	<tr>
 		<td>${row.user_num}</td>
-		<td><a href="${path}/user/view?user_num=${row.user_num}">${row.user_email}</a></td>
+		<td><a href="${path}/user/view?user_num=${row.user_num}">${row.user_id}</a></td>
 		<td>${row.user_pw}</td>
-		<td>${row.user_pwCheck}</td>
 		<td>${row.user_name}</td>
 		<td>${row.user_phone}</td>
 		<td>${row.user_gender}</td>

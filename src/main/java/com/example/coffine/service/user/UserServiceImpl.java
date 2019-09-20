@@ -1,6 +1,8 @@
 package com.example.coffine.service.user;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -20,21 +22,31 @@ public class UserServiceImpl implements UserService {
 		return userDao.listUser();
 	}
 
-	@Override
+	@Override // 회원 업데이트
 	public void updateUser(UserDTO dto) {
-		// TODO Auto-generated method stub
-
+		userDao.updateUser(dto);
 	}
 
 	@Override
-	public void deleteUser(String user_num) {
-		// TODO Auto-generated method stub
-
+	public void deleteUser(int user_num) {
+		userDao.deleteUser(user_num);
 	}
 
 	@Override // 회원 추가 
 	public void insertUser(UserDTO dto) {
 		userDao.insertUser(dto);
 	}
+
+	@Override // 회원 상세 정보 
+	public UserDTO viewUser(int user_num) {
+		return userDao.viewUser(user_num);
+	}
+
+	@Override
+	public boolean checkPw(String user_id, String user_pw) {
+		return userDao.checkPw(user_id, user_pw);
+	}
+
+	
 
 }

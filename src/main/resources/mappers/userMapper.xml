@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--  namespace 중복안되게 작성   -->
+<mapper namespace="user">
+	 <!-- 전체 레코드 조회  -->
+	<select id="listUser" resultType="com.example.coffine.model.user.dto.UserDTO">
+	SELECT 
+		user_num, user_id, user_pw, user_pwCheck, user_name,
+		user_phone, user_gender, user_joinDate
+	FROM 
+		USER 
+			ORDER BY user_num desc		
+	</select>
+	<!-- 회원 추가 -->
+	<insert id="insertUser">
+	INSERT INTO
+	 USER
+	 	(user_id, user_pw, user_pwCheck, user_name,
+			user_phone, user_gender) 
+	VALUES
+		(#{user_id}, #{user_pw}, #{user_pwCheck}, #{user_name},
+			#{user_phone}, #{user_gender})
+	</insert>
+	<!-- 회원 상세 정보 -->
+	<select id="viewUser" resultType="com.example.coffine.model.user.dto.UserDTO">
+	SELECT 
+		user_num, user_id, user_pw, user_pwCheck, user_name,
+		user_phone, user_gender, user_joinDate
+	FROM
+		USER WHERE user_num=#{user_num};	
+	</select>
+	<!--비밀번호 체크 -->
+	<select id="checkPw" resultType="int">
+	select count(*) from user where user_id=#{user_id} and user_pw=#{user_pw}	
+	</select>
+	<!-- 회원 업데이트 -->	
+	<update id="updateUser">
+	UPDATE USER
+	 	SET user_id=#{user_id}, user_pw=#{user_pw},
+	 		user_pwCheck=#{user_pwCheck}, user_name=#{user_name},
+	 		user_phone=#{user_phone}, user_gender=#{user_gender}
+	 WHERE user_num=${user_num}
+	</update>
+	<!-- 회원 삭제 -->
+	<delete id="deleteUser">
+	delete
+	 	from user
+	 	 		where user_num=#{user_num}
+		 
+	</delete>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

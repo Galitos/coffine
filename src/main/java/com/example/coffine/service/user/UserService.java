@@ -13,14 +13,13 @@ public interface UserService {
 	// 회원 목록 수정 	
 	void updateUser(UserDTO dto);
 	// 회원 목록 삭제 
-	void deleteUser(String user_num);
+	void deleteUser(int user_num);
 	// 회원 목록  추가 
 	void insertUser(UserDTO dto);
+	// 회원 상세 정보 
+	UserDTO viewUser(int user_num);
+	// 비밀번호 체크 	
+	boolean checkPw(String user_pw, String user_pwCheck);
 	
 	
-	/*
-	 * public UserDTO viewMemeber(String userid); public boolean checkPw(String
-	 * userid, String passwd); public String login(MemberDTO dto); public void
-	 * logout(HttpSession session);
-	 */
-	}
+}

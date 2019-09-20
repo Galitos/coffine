@@ -9,15 +9,15 @@
 <script>
 $(function() {
 	$("#btnJoin").click(function() {
-		var user_email=$("#user_email").val();
+		var user_id=$("#user_id").val();
 		var user_pw=$("#user_pw").val();
 		var user_pwCheck=$("#user_pwCheck").val();
 		var user_name=$("#user_name").val();
 		var user_phone=$("#user_phone").val();
 		var user_gender=$("#user_gender").val();
-		if(user_email == ""){
+		if(user_id == ""){
 			alert("이메일 입력하세요")
-			$("#user_email").focus();
+			$("#user_id").focus();
 			return
 		}
 		if(user_pw == ""){
@@ -61,8 +61,8 @@ $(function() {
 <form name="form1"  method="post">
 <table border="1" width="500px">
 	<tr>
-		<td>이메일</td>
-		<td><input type="text" name="user_email" id="user_email"></td>
+		<td>아이디</td>
+		<td><input type="text" name="user_id" id="user_id"></td>
 	</tr>
 	<tr>
 		<td>비밀번호</td>

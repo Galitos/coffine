@@ -10,7 +10,6 @@
 <body>
 <%@ include file="include/menu.jsp" %>
 <h1>coffine</h1>
- Coffine 홈페이지에 오신걸 환영합니다 .
-
+ Coffine 홈페이지에 오신걸 환영합니다 . 
 </body>
 </html>

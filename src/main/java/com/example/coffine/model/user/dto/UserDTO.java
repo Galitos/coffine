@@ -5,7 +5,7 @@ import java.util.Date;
 public class UserDTO {
 	
 	private int user_num; 		// 사용자 고유 번호 (pk)
-	private String user_email;  // 이메일(아이디로 사용) 중복X
+	private String user_id;  // 이메일(아이디로 사용) 중복X
 	private String user_pw;     // 비밀번호
 	private String user_pwCheck;// 비밀번호 확인
 	private String user_name;   // 사용자 이름
@@ -15,7 +15,7 @@ public class UserDTO {
 	
 	@Override
 	public String toString() {
-		return "UserDTO [user_num=" + user_num + ", user_email=" + user_email + ", user_pw=" + user_pw
+		return "UserDTO [user_num=" + user_num + ", user_id=" + user_id + ", user_pw=" + user_pw
 				+ ", user_pwCheck=" + user_pwCheck + ", user_name=" + user_name + ", user_phone=" + user_phone
 				+ ", user_gender=" + user_gender + ", user_joinDate=" + user_joinDate + "]";
 	}
@@ -25,11 +25,11 @@ public class UserDTO {
 	public void setUser_num(int user_num) {
 		this.user_num = user_num;
 	}
-	public String getUser_email() {
-		return user_email;
+	public String getuser_id() {
+		return user_id;
 	}
-	public void setUser_email(String user_email) {
-		this.user_email = user_email;
+	public void setuser_id(String user_id) {
+		this.user_id = user_id;
 	}
 	public String getUser_pw() {
 		return user_pw;

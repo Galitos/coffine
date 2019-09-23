@@ -26,7 +26,16 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.example.coffine" />
-	
-	
+	 <!-- file Upload -->
+	 <beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="10485760" />
+	</beans:bean>
+   
+	<!-- resource mapping -->
+	<!--  웹에서 href="웹루트명/폴더/파일" 로 리소스를 호출하기위한 설정 -->
+	<resources location="/css/" mapping="/css/**"/>
+	<resources location="/image/" mapping="/image/**"/>
+	<resources location="/js/" mapping="/js/**"/>
+	<resources location="/SmartEditor/" mapping="/SmartEditor/**"/>
 	
 </beans:beans>

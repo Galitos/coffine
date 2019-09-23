@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="board">
+	<!-- 전체 레코드 숫자  -->
+	<select id="totalCount" resultType="int">
+	select count(*) from board;	
+	</select>
+	
+
+	<!--게시글 리스트 조회  -->
+	<select id="boardList"
+		resultType="com.example.coffine.model.board.dto.BoardDTO">
+		select
+			bno,
+			title,
+			writer,
+			viewCnt,
+			postDate
+		from board
+			order by bno desc
+			LIMIT #{startList}, #{listSize}
+			 <!--  limit #{pageNum},#{contentNum} -->
+	</select>
+
+	<!-- 게시글 상세 조회 -->
+	<select id="boardView"
+		resultType="com.example.coffine.model.board.dto.BoardDTO">
+		SELECT
+		bno,
+		title,
+		contents,
+		writer,
+		viewCnt,
+		postDate
+		FROM board
+		WHERE bno=#{bno}
+	</select>
+
+	<!-- 게시글 등록 -->
+	<insert id="boardAdd">
+		INSERT
+		INTO board (title, writer, contents)
+		VALUES(
+				#{title},
+				#{writer},
+				#{contents})
+	</insert>
+	
+	<!-- 게시글 수정  -->
+	<update id="boardUpdate">
+		update 
+        	board
+            	set
+                	title = #{title},
+                	contents = #{contents},
+                	writer = ${writer}
+            where
+                bno = #{bno}
+	</update>
+	
+	<!-- 게시글 삭제 -->
+	<delete id="boardDelete">
+		DELETE
+			 FROM
+			  board
+			  	 WHERE bno=#{bno}
+	</delete>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

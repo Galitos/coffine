@@ -49,50 +49,56 @@ $(function() {
 		document.form1.submit();
 	});
 	
+	var offset = $("#join").offset();
+	$('html, body').animate({scrollTop : offset.top}, 1000);	
 	
 });
 
 </script>
-
 </head>
 <body>
-<%@ include file="../include/menu.jsp" %>
-<h1>회원가입</h1>
-<form name="form1"  method="post">
-<table border="1" width="500px">
-	<tr>
-		<td>아이디</td>
-		<td><input type="text" name="user_id" id="user_id"></td>
-	</tr>
-	<tr>
-		<td>비밀번호</td>
-		<td><input type="password" name="user_pw" id="user_pw"></td>	
-	</tr>
-	<tr>
-		<td>비밀번호 확인</td>
-		<td><input type="password" name="user_pwCheck" id="user_pwCheck"></td>	
-	</tr>
-	<tr>
-		<td>이름</td>
-		<td><input type="text" name="user_name" id="user_name"></td>	
-	</tr>
-	<tr>
-		<td>휴대폰 번호</td>
-		<td><input type="text" name="user_phone" id="user_phone"></td>	
-	</tr>
-	<tr>
-		<td>성별</td>
-		<td>
-			<input type="radio" name="user_gender" value="남" id="user_gender">남자
-			<input type="radio" name="user_gender" value="여" id="user_gender">여자
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2" align="center">
-			<input type="button" id="btnJoin" value="회원가입">
-		</td>	
-	</tr>
-</table>
-</form>
+	<%@ include file="../include/menu.jsp" %>
+	<section id="join">
+		<div class="container">
+			<h1>회원가입</h1>
+			<form name="form1"  method="post">
+				<table class="table" border="1" width="500px">
+					<tr>
+						<td>아이디</td>
+						<td><input type="text" name="user_id" id="user_id" class="form-control"></td>
+					</tr>
+					<tr>
+						<td>비밀번호</td>
+						<td><input type="password" name="user_pw" id="user_pw" class="form-control"></td>	
+					</tr>
+					<tr>
+						<td>비밀번호 확인</td>
+						<td><input type="password" name="user_pwCheck" id="user_pwCheck" class="form-control"></td>	
+					</tr>
+					<tr>
+						<td>이름</td>
+						<td><input type="text" name="user_name" id="user_name" class="form-control"></td>	
+					</tr>
+					<tr>
+						<td>휴대폰 번호</td>
+						<td><input type="text" name="user_phone" id="user_phone" class="form-control"></td>	
+					</tr>
+					<tr>
+						<td>성별</td>
+						<td class="">
+							<input type="radio" class="checks" name="user_gender" value="남" id="user_gender">남자
+							<input type="radio" class="checks" name="user_gender" value="여" id="user_gender">여자
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<input type="button" id="btnJoin" class="btn" value="회원가입">
+						</td>	
+					</tr>
+				</table>
+			</form>
+		</div>
+	</section>
+	<%@ include file="../include/footer.jsp" %>
 </body>
 </html>

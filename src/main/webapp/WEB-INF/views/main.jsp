@@ -5,7 +5,6 @@
 <head>
 
 
-http://localhost:8011/coffine/resources/ckeditor/ckeditor.js
 
 
 
@@ -17,9 +16,10 @@ http://localhost:8011/coffine/resources/ckeditor/ckeditor.js
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<div class="section-title">
-						<h2>ABOUT</h2>
-						<p>A creative agency based on Candy Land, ready to boost your business with some beautifull templates. Lattes Agency is one of the best in town see more you will be amazed.</p>
+					<div class="section-title" align="center">
+						 <h2>포토폴리오 프로젝트 소개</h2>
+							<%--  <img src="${path}/resources/images/Sunrise.jpg" style="width: 1250px"  alt="Sunrise Image" /> --%> 						
+						 <p>포토폴리오 사이트 입니다. 사용하였던 프론트엔드, 백엔드 기술은 아래와 같습니다.</p>
 					</div>
 				</div>
 			</div>
@@ -28,17 +28,17 @@ http://localhost:8011/coffine/resources/ckeditor/ckeditor.js
 				<div class="col-md-3 text-center">
 					<div class="mz-module-about">
 						<i class="fa fa-briefcase ot-circle"></i>
-						<h3>Web Development</h3>
-						<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+						<h3>웹 프론트엔드 기술</h3>
+						<p>javascript, css, fontawesome, bootstrap3(프레임워크)</p>
 					</div>
 				</div>
 				<!-- end about module -->
 				<!-- about module -->
 				<div class="col-md-3 text-center">
 					<div class="mz-module-about">
-						<i class="fa fa-photo ot-circle"></i>
-						<h3>Visualisation</h3>
-						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+						<i class="fa fa-briefcase ot-circle"></i>
+						<h3>웹 백엔드 기술</h3>
+						<p>java, jsp, spring(프레임워크), mariaDB, mybatis, interceptor(로그인 관련)</p>
 					</div>
 				</div>
 				<!-- end about module -->
@@ -46,8 +46,8 @@ http://localhost:8011/coffine/resources/ckeditor/ckeditor.js
 				<div class="col-md-3 text-center">
 					<div class="mz-module-about">
 						<i class="fa fa-camera-retro ot-circle"></i>
-						<h3>Photography</h3>
-						<p>Accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+						<h3>주요 기능</h3>
+						<p>회원 모듈, 게시판 모듈 (파일, 사진 업로드, CKEditor 웹 에디터)</p>
 					</div>
 				</div>
 				<!-- end about module -->
@@ -55,9 +55,9 @@ http://localhost:8011/coffine/resources/ckeditor/ckeditor.js
 				<div class="col-md-3 text-center">
 					<div class="mz-module-about">
 						<i class="fa fa-cube ot-circle"></i>
-						<h3>UI/UX Design</h3>
-						<p> Itaque earum rerum hic tenetur a sapiente, ut aut reiciendis maiores</p>
-					</div>
+						<h3>UI/UX 디자인</h3>
+						<p>원페이지 UI 방식, 서브페이지는 개별 페이지 UI 방식</p>
+					</div>ㅌ`
 				</div>
 				<!-- end about module -->
 			</div>

@@ -9,6 +9,7 @@
 </head>
 <body>
 <%@ include file="../include/menu.jsp" %>
+<div class="container">
 <h1>회원 목록 </h1>
 <table border="1" width="700px">
 	<tr>
@@ -33,6 +34,7 @@
 	</tr>
 </c:forEach>	
 </table> 
-
+</div>
 </body>
+<%@ include file="../include/footer.jsp" %>
 </html>

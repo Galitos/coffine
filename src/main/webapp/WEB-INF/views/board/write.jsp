@@ -20,7 +20,7 @@
 					</tr>
 					<tr>
 						<td>작성자</td>
-						<td><input type="text" name="writer"></td>
+						<td><input type="text" name="writer" value="${ loginUser.user_id }" readonly></td>
 					</tr>
 					<tr>
 						<td>내용</td>

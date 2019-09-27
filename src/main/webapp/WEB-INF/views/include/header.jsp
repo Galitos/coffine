@@ -16,13 +16,15 @@
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
 <link rel="stylesheet" href="${path}/include/radio.css" />
 
+<link href="${path}/resources/style.css?ver=1" rel="stylesheet" type="text/css" />
+
 <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="${path}/resources/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <!-- Custom styles for this template -->
 <link rel="stylesheet" href="${path}/resources/css/owl.carousel.css" >
 <link rel="stylesheet" href="${path}/resources/css/owl.theme.default.min.css">
-<link rel="stylesheet" href="${path}/resources/css/style.css">
+<link rel="stylesheet" href="${path}/resources/css/style.css?v3">
 <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 <script src="${path}/resources/js/ie-emulation-modes-warning.js"></script>
@@ -49,9 +51,9 @@
 	<div class="container">
 		<div class="slider-container">
 			<div class="intro-text">
-				<div class="intro-lead-in">Welcome To Our Studio!</div>
-				<div class="intro-heading">It's Nice To Meet You</div>
-				<a href="#about" class="page-scroll btn btn-xl">Tell Me More</a>
+				<div class="intro-lead-in">커피 홍보 사이트</div>
+				<div class="intro-heading">포토폴리오</div>
+				<a href="#about" class="page-scroll btn btn-xl">소개</a>
 			</div>
 		</div>
 	</div>

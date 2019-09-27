@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!--  namespace 중복안되게 작성   -->
 <mapper namespace="user">
 	 <!-- 전체 레코드 조회  -->
-	<select id="listUser" resultType="com.example.coffine.model.user.dto.UserDTO">
+	<select id="listUser" resultType="com.example.coffine.domain.User">
 	SELECT 
 		user_num, user_id, user_pw, user_pwCheck, user_name,
 		user_phone, user_gender, user_joinDate
@@ -25,7 +25,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{user_phone}, #{user_gender})
 	</insert>
 	<!-- 회원 상세 정보 -->
-	<select id="viewUser" resultType="com.example.coffine.model.user.dto.UserDTO">
+	<select id="viewUser" resultType="com.example.coffine.domain.User">
 	SELECT 
 		user_num, user_id, user_pw, user_pwCheck, user_name,
 		user_phone, user_gender, user_joinDate

@@ -13,7 +13,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!--게시글 리스트 조회  -->
 	<select id="boardList"
-		resultType="com.example.coffine.model.board.dto.BoardDTO">
+		resultType="com.example.coffine.domain.Board">
 		select
 			bno,
 			title,
@@ -28,7 +28,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!-- 게시글 상세 조회 -->
 	<select id="boardView"
-		resultType="com.example.coffine.model.board.dto.BoardDTO">
+		resultType="com.example.coffine.domain.Board">				
 		SELECT
 		bno,
 		title,
@@ -57,7 +57,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             	set
                 	title = #{title},
                 	contents = #{contents},
-                	writer = ${writer}
+                	writer = #{writer}
             where
                 bno = #{bno}
 	</update>

@@ -9,23 +9,29 @@
 <script>
 	$(function() {
 		$("#btnUpdate").click(function() {
-			document.updateForm.action = "${path}/board/write";
-			document.updateForm.submit();
+			document.form.action = "${path}/board/update";
+			document.form.submit();
 		});
 		$("#btnDelete").click(function() {
 			if (confirm("삭제하시겠습니까?")) {
-				document.updateForm.action = "${path}/board/delete";
-				document.updateForm.submit();
+				document.form.action = "${path}/board/delete";
+				document.form.submit();
 			}
 		});
+		$("#btnList").click(function() {
+			location.href="${path}/board/boardList";
+		});
+		
 	});
 </script>
+<script type="text/javascript"
+	src="${path}/resources/ckeditor/ckeditor.js"></script>
 </head>
 <body>
 	<%@ include file="../include/menu.jsp"%>
-	<form name="updateForm" method="post">
+	<form name="form" method="post">
 		<div>
-			<label>번호</label> <input type="text" name="bno" value="${view.bno}"
+			 <input type="hidden" name="bno" value="${view.bno}"
 				readonly="readonly" />
 		</div>
 		<div>
@@ -34,11 +40,17 @@
 		</div>
 		<div>
 			<label>내용</label>
-			<textarea rows="5" cols="50" name="content">${view.contents}</textarea>
+			<textarea name="contents" id="contents">${ view.contents }</textarea>
+			<script type="text/javascript">
+					CKEDITOR.replace('contents', {
+						height : 400
+						});
+			</script>
 		</div>
+				
 		<div>
 			<label>작성자</label> <input type="text" name="writer"
-				value="${view.writer}" />
+				value="${view.writer}" readonly />
 		</div>
 
 		<div>
@@ -46,10 +58,15 @@
 				value="<fmt:formatDate value="${view.postDate}" pattern="yyyy-MM-dd" />" />
 		</div>
 
-		<div>
+		<div align="center">
+		<!-- 	<button id="btnDelete" class="btn btn-danger">삭제</button>
+			<button id="btnUpdate" class="btn btn-primary">수정</button> -->
 			<input type="hidden" name="bno" value="${view.bno}"> 
+			<c:if test="${ loginUser.user_id == view.writer }">
 			<input type="button" id="btnUpdate" value="수정"> 
 			<input type="button" id="btnDelete" value="삭제">
+			</c:if>
+			<input type="button" id="btnList" value="목록">
 		</div>
 
 	</form>
